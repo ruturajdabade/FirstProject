@@ -3,86 +3,201 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sign Up</title>
+    <title>RUTFLIX</title>
 
     <style>
-        body {
+        *{
             margin: 0;
             padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #000;
             font-family: Arial, sans-serif;
-            background: url('imgbg.png') no-repeat center center/cover;
-            height: 100vh;
+            color: #fff;
+            overflow-x: hidden;
+        }
+
+        /* NAVBAR */
+        .navbar {
             display: flex;
-            justify-content: center;
+            justify-content: space-between;
             align-items: center;
-            backdrop-filter: blur(3px);
-        }
-
-        .signup-container {
-            width: 350px;
-            padding: 30px;
-            background: rgba(255, 255, 255, 0.92);
-            border-radius: 12px;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.4);
-        }
-
-        h2 {
-            text-align: center;
-            margin-bottom: 20px;
-        }
-
-        input, textarea, select {
+            padding: 20px 50px;
+            position: fixed;
             width: 100%;
-            padding: 10px;
-            margin: 8px 0;
-            border-radius: 6px;
-            border: 1px solid #ccc;
-            font-size: 15px;
+            top: 0;
+            z-index: 100;
+            background: rgba(0,0,0,0.6);
+            backdrop-filter: blur(5px);
         }
 
-        .btn {
-            width: 100%;
-            padding: 12px;
-            background: #ff9800;
+        .logo {
+            font-size: 35px;
+            font-weight: bold;
+            letter-spacing: 2px;
+            color: red;
+        }
+
+        .nav-links a{
             color: white;
-            font-size: 16px;
+            margin: 0 20px;
+            text-decoration: none;
+            font-size: 18px;
+        }
+
+        .nav-links a:hover {
+            color: red;
+        }
+
+        /* HERO SECTION */
+        .hero {
+            height: 90vh;
+            background: url("https://wallpaperaccess.com/full/36611.jpg") no-repeat center center/cover;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding-left: 50px;
+            margin-top: 80px;
+        }
+
+        .hero h1 {
+            font-size: 60px;
+            max-width: 600px;
+            font-weight: 700;
+        }
+
+        .hero p {
+            font-size: 22px;
+            margin: 20px 0;
+            max-width: 500px;
+        }
+
+        .hero button {
+            padding: 15px 35px;
+            font-size: 22px;
             border: none;
-            border-radius: 6px;
+            background-color: red;
+            color: white;
             cursor: pointer;
+            border-radius: 5px;
+            margin-top: 10px;
         }
 
-        .btn:hover {
-            background: #e68900;
+        .hero button:hover {
+            background-color: #b30000;
         }
 
-        label {
-            font-size: 14px;
+        /* MOVIE SLIDERS */
+        .section-title {
+            margin: 30px 20px;
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+        .movies {
+            display: flex;
+            overflow-x: scroll;
+            gap: 20px;
+            padding: 0 20px;
+            scroll-behavior: smooth;
+        }
+
+        .movies::-webkit-scrollbar {
+            display: none;
+        }
+
+        .movie {
+            min-width: 220px;
+            height: 330px;
+            border-radius: 10px;
+            background-size: cover;
+            background-position: center;
+            cursor: pointer;
+            transition: transform 0.3s;
+        }
+
+        .movie:hover {
+            transform: scale(1.09);
+        }
+
+        /* CREDIT */
+        .credit {
+            position: fixed;
+            bottom: 10px;
+            right: 20px;
+            font-size: 16px;
+            opacity: 0.7;
+            color: #fff;
         }
     </style>
 </head>
+
 <body>
-    <div class="signup-container">
-        <h2>
-            <img src="logo.png" alt="Rutflix Logo" style="height: 40px; vertical-align: middle; margin-right: 10px;">
-            <span style="color: rgb(147, 9, 9);">Welcome to Rutflix</span>
-        </h2>
 
+    <!-- NAVBAR -->
+    <div class="navbar">
+        <div class="logo">RUTFLIX</div>
 
-        <input type="text" placeholder="Enter username">
-        <input type="email" placeholder="Enter your email">
-        <input type="password" placeholder="Enter password (min 6 characters)">
-
-        <label for="gamer"><span style="color: darkblue;">Select which type of gamer you are:</span></label>
-
-        <select id="gamer" name="gamer">
-            <option value="online">Online Gamer</option>
-            <option value="offline">Offline Gamer</option>
-            <option value="both">Both</option>
-        </select>
-
-        <textarea placeholder="Please give your valuable feedback..." rows="3"></textarea>
-
-        <button class="btn">Sign Up</button>
+        <div class="nav-links">
+            <a href="#">Home</a>
+            <a href="#">Movies</a>
+            <a href="#">Games</a>
+            <a href="#">Anime</a>
+        </div>
     </div>
+
+    <!-- HERO -->
+    <div class="hero">
+        <h1>Unlimited Movies, Games, Anime & Entertainment</h1>
+        <p>Watch everywhere. Explore everything. Only on RUTFLIX.</p>
+        <button>Explore Now</button>
+    </div>
+
+    <!-- MOVIES SECTION (MARVEL) -->
+    <h2 class="section-title">Marvel Movies</h2>
+    <div class="movies">
+        <div class="movie" style="background-image: url('https://i.imgur.com/j0HhVxW.jpeg');"></div>
+        <div class="movie" style="background-image: url('https://i.imgur.com/Hj7zquY.jpeg');"></div>
+        <div class="movie" style="background-image: url('https://i.imgur.com/VKp7NSS.jpeg');"></div>
+        <div class="movie" style="background-image: url('https://i.imgur.com/EXEaGxX.jpeg');"></div>
+        <div class="movie" style="background-image: url('https://i.imgur.com/UPsRk3S.jpeg');"></div>
+    </div>
+
+    <!-- GAMES SECTION -->
+    <h2 class="section-title">Games (GTA 6 & More)</h2>
+    <div class="movies">
+        <div class="movie" style="background-image: url('https://i.imgur.com/hXOp9Ht.jpeg');"></div>
+        <div class="movie" style="background-image: url('https://i.imgur.com/zvWfaV8.jpeg');"></div>
+        <div class="movie" style="background-image: url('https://i.imgur.com/sHd3CRi.jpeg');"></div>
+        <div class="movie" style="background-image: url('https://i.imgur.com/bxUA0Ur.jpeg');"></div>
+    </div>
+
+    <!-- WEB SERIES SECTION -->
+    <h2 class="section-title">Web Series (Vikings, etc.)</h2>
+    <div class="movies">
+        <div class="movie" style="background-image: url('https://i.imgur.com/Z8KRBm8.jpeg');"></div>
+        <div class="movie" style="background-image: url('https://i.imgur.com/pZQXUVz.jpeg');"></div>
+        <div class="movie" style="background-image: url('https://i.imgur.com/1KvtunR.jpeg');"></div>
+        <div class="movie" style="background-image: url('https://i.imgur.com/wQr8FRH.jpeg');"></div>
+    </div>
+
+    <!-- ANIME SECTION -->
+    <h2 class="section-title">Anime (Dragon Ball, Naruto & More)</h2>
+    <div class="movies">
+        <div class="movie" style="background-image: url('https://i.imgur.com/1FeE0mE.jpeg');"></div>
+        <div class="movie" style="background-image: url('https://i.imgur.com/bC2ljtQ.jpeg');"></div>
+        <div class="movie" style="background-image: url('https://i.imgur.com/0mCu8Fk.jpeg');"></div>
+        <div class="movie" style="background-image: url('https://i.imgur.com/FDWz7sO.jpeg');"></div>
+    </div>
+
+    <!-- CREDIT TEXT -->
+    <div class="credit">Created by Ruturaj</div>
+
+    <script>
+        console.log("RUTFLIX Loaded Successfully!");
+    </script>
+
 </body>
 </html>
