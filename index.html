@@ -51,7 +51,7 @@
             color: red;
         }
 
-        /* HERO SECTION (NETFLIX STYLE BG) */
+        /* HERO SECTION */
         .hero {
             height: 100vh;
             background: url("https://wallpaperaccess.com/full/2112550.jpg") no-repeat center center/cover;
@@ -63,7 +63,6 @@
             position: relative;
         }
 
-        /* Dark overlay */
         .hero::before {
             content: "";
             position: absolute;
@@ -115,6 +114,80 @@
             opacity: 0.7;
             color: #fff;
         }
+
+
+        /* ------------------------------------------------------------------- */
+        /*                          MOBILE RESPONSIVE                          */
+        /* ------------------------------------------------------------------- */
+        
+        @media (max-width: 768px) {
+            .navbar {
+                padding: 15px 20px;
+            }
+
+            .logo {
+                font-size: 28px;
+            }
+
+            .nav-links a {
+                margin: 0 10px;
+                font-size: 16px;
+            }
+
+            .hero {
+                padding-left: 20px;
+            }
+
+            .hero h1 {
+                font-size: 40px;
+                max-width: 90%;
+            }
+
+            .hero p {
+                font-size: 18px;
+                max-width: 85%;
+            }
+
+            .hero button {
+                padding: 12px 25px;
+                font-size: 18px;
+            }
+        }
+
+        @media (max-width: 480px) {
+
+            .navbar {
+                padding: 10px 15px;
+                flex-direction: column;
+                gap: 10px;
+                text-align: center;
+            }
+
+            .nav-links a {
+                margin: 0 5px;
+                font-size: 14px;
+            }
+
+            .hero {
+                padding-left: 10px;
+                text-align: left;
+            }
+
+            .hero h1 {
+                font-size: 30px;
+                max-width: 95%;
+            }
+
+            .hero p {
+                font-size: 16px;
+                max-width: 90%;
+            }
+
+            .hero button {
+                padding: 10px 20px;
+                font-size: 16px;
+            }
+        }
     </style>
 </head>
 
@@ -132,20 +205,15 @@
         </div>
     </div>
 
-    <!-- NETFLIX STYLE HERO BACKGROUND -->
+    <!-- HERO SECTION -->
     <div class="hero">
         <h1>Unlimited Movies, Games, Anime & Entertainment</h1>
         <p>Watch anywhere. Anytime. Only on RUTFLIX.</p>
         <button>Explore Now</button>
     </div>
 
-    <!-- CREDIT TEXT -->
+    <!-- CREDIT -->
     <div class="credit">Created by Ruturaj</div>
-
-    <script>
-        console.log("RUTFLIX Loaded Successfully!");
-    </script>
 
 </body>
 </html>
-
