@@ -6,7 +6,7 @@
     <title>RUTFLIX</title>
 
     <style>
-        *{
+        * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
@@ -40,9 +40,13 @@
             color: red;
         }
 
-        .nav-links a{
+        .nav-links {
+            display: flex;
+            gap: 20px;
+        }
+
+        .nav-links a {
             color: white;
-            margin: 0 20px;
             text-decoration: none;
             font-size: 18px;
         }
@@ -51,10 +55,62 @@
             color: red;
         }
 
+        /* SEARCH BAR */
+        .search-container {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            background: rgba(35,35,35,0.8);
+            padding: 8px 12px;
+            border-radius: 5px;
+        }
+
+        .search-container input {
+            background: transparent;
+            border: none;
+            outline: none;
+            color: white;
+            font-size: 16px;
+            width: 150px;
+        }
+
+        .search-container input::placeholder {
+            color: #bbb;
+        }
+
+        .search-icon {
+            width: 22px;
+            filter: invert(100%);
+            cursor: pointer;
+        }
+
+        /* PROFILE ICON */
+        .profile-icon {
+            width: 35px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        /* LANGUAGE SELECTOR */
+        .lang-select {
+            background: rgba(20,20,20,0.85);
+            color: white;
+            padding: 8px 12px;
+            border: 1px solid #555;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        .lang-select option {
+            background: #222;
+            color: #fff;
+        }
+
         /* HERO SECTION */
         .hero {
             height: 100vh;
-            background: url("https://wallpaperaccess.com/full/2112550.jpg") no-repeat center center/cover;
+            background: url("rutflix-bg.png") no-repeat center center/cover;
             display: flex;
             flex-direction: column;
             justify-content: center;
@@ -70,7 +126,7 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: rgba(0,0,0,0.6);
+            background: rgba(0,0,0,0.55);
         }
 
         .hero h1, .hero p, .hero button {
@@ -105,87 +161,89 @@
             background-color: #b30000;
         }
 
-        /* CREDIT */
-        .credit {
-            position: fixed;
-            bottom: 10px;
-            right: 20px;
-            font-size: 16px;
-            opacity: 0.7;
-            color: #fff;
+        /* EMAIL SIGNUP SECTION */
+        .email-section {
+            text-align: center;
+            padding: 60px 20px;
+            margin-top: 40px;
         }
 
+        .email-section p {
+            font-size: 22px;
+            margin-bottom: 20px;
+        }
 
-        /* ------------------------------------------------------------------- */
-        /*                          MOBILE RESPONSIVE                          */
-        /* ------------------------------------------------------------------- */
-        
+        .email-container {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-top: 10px;
+            flex-wrap: wrap;
+        }
+
+        .email-input {
+            padding: 15px;
+            width: 350px;
+            font-size: 18px;
+            border-radius: 5px;
+            border: 1px solid #555;
+            background: #111;
+            color: white;
+        }
+
+        .get-started {
+            background: red;
+            padding: 15px 30px;
+            font-size: 18px;
+            border: none;
+            color: white;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .get-started:hover {
+            background: #b30000;
+        }
+
+        /* FOOTER */
+        .footer {
+            padding: 50px 15%;
+            color: #bbb;
+            margin-top: 40px;
+        }
+
+        .footer a {
+            color: #bbb;
+            text-decoration: underline;
+            font-size: 15px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            margin-top: 30px;
+            gap: 20px;
+        }
+
+        .footer-grid a {
+            display: block;
+            margin: 8px 0;
+        }
+
+        /* RESPONSIVE */
         @media (max-width: 768px) {
             .navbar {
                 padding: 15px 20px;
             }
 
-            .logo {
-                font-size: 28px;
-            }
-
-            .nav-links a {
-                margin: 0 10px;
-                font-size: 16px;
-            }
-
-            .hero {
-                padding-left: 20px;
-            }
-
-            .hero h1 {
-                font-size: 40px;
-                max-width: 90%;
-            }
-
-            .hero p {
-                font-size: 18px;
-                max-width: 85%;
-            }
-
-            .hero button {
-                padding: 12px 25px;
-                font-size: 18px;
+            .footer-grid {
+                grid-template-columns: repeat(2, 1fr);
             }
         }
 
         @media (max-width: 480px) {
-
-            .navbar {
-                padding: 10px 15px;
-                flex-direction: column;
-                gap: 10px;
-                text-align: center;
-            }
-
-            .nav-links a {
-                margin: 0 5px;
-                font-size: 14px;
-            }
-
-            .hero {
-                padding-left: 10px;
-                text-align: left;
-            }
-
-            .hero h1 {
-                font-size: 30px;
-                max-width: 95%;
-            }
-
-            .hero p {
-                font-size: 16px;
-                max-width: 90%;
-            }
-
-            .hero button {
-                padding: 10px 20px;
-                font-size: 16px;
+            .footer-grid {
+                grid-template-columns: 1fr;
             }
         }
     </style>
@@ -203,17 +261,107 @@
             <a href="#">Games</a>
             <a href="#">Anime</a>
         </div>
+
+        <div style="display:flex; align-items:center; gap:15px;">
+
+            <select class="lang-select">
+                <option>English</option>
+                <option>हिंदी</option>
+                <option>मराठी</option>
+                <option>தமிழ்</option>
+                <option>తెలుగు</option>
+            </select>
+
+            <div class="search-container">
+                <img src="https://cdn-icons-png.flaticon.com/512/622/622669.png" class="search-icon">
+                <input type="text" placeholder="Search your content...">
+            </div>
+
+            <img src="https://cdn-icons-png.flaticon.com/512/149/149071.png" class="profile-icon">
+        </div>
     </div>
 
-    <!-- HERO SECTION -->
+    <!-- HERO -->
     <div class="hero">
         <h1>Unlimited Movies, Games, Anime & Entertainment</h1>
-        <p>Watch anywhere. Anytime. Only on RUTFLIX.</p>
+        <p>Watch, play Anytime. Only on RUTFLIX.</p>
         <button>Explore Now</button>
     </div>
 
-    <!-- CREDIT -->
-    <div class="credit">Created by Ruturaj</div>
+    <!-- EMAIL SIGNUP SECTION -->
+    <div class="email-section">
+        <p>Ready to watch? Enter your email to create or restart your membership.</p>
+        <div class="email-container">
+            <input type="email" class="email-input" placeholder="Email address">
+            <button class="get-started">Get Started ➜</button>
+        </div>
+    </div>
+
+    <!-- FOOTER -->
+    <div class="footer">
+        <p>Questions? Call 000-800-919-1743</p>
+
+        <div class="footer-grid">
+            <div>
+                <a href="#">FAQ</a>
+                <a href="#">Investor Relations</a>
+                <a href="#">Privacy</a>
+                <a href="#">Speed Test</a>
+            </div>
+            <div>
+                <a href="#">Help Centre</a>
+                <a href="#">Jobs</a>
+                <a href="#">Cookie Preferences</a>
+                <a href="#">Legal Notices</a>
+            </div>
+            <div>
+                <a href="#">Account</a>
+                <a href="#">Ways to Watch</a>
+                <a href="#">Corporate Information</a>
+                <a href="#">Only on RUTFLIX</a>
+            </div>
+            <div>
+                <a href="#">Media Centre</a>
+                <a href="#">Terms of Use</a>
+                <a href="#">Contact Us</a>
+            </div>
+        </div>
+    </div>
 
 </body>
 </html>
+
+<!-- FOOTER -->
+<div class="footer">
+    <p>Questions? Call 000-800-919-1743</p>
+
+    <div class="footer-grid">
+        <div>
+            <a href="#">FAQ</a>
+            <a href="#">Investor Relations</a>
+            <a href="#">Privacy</a>
+            <a href="#">Speed Test</a>
+        </div>
+        <div>
+            <a href="#">Help Centre</a>
+            <a href="#">Jobs</a>
+            <a href="#">Cookie Preferences</a>
+            <a href="#">Legal Notices</a>
+        </div>
+        <div>
+            <a href="#">Account</a>
+            <a href="#">Ways to Watch</a>
+            <a href="#">Corporate Information</a>
+            <a href="#">Only on RUTFLIX</a>
+        </div>
+        <div>
+            <a href="#">Media Centre</a>
+            <a href="#">Terms of Use</a>
+            <a href="#">Contact Us</a>
+        </div>
+    </div>
+
+    <p style="margin-top: 40px; text-align:center; font-size:16px; color:#777;">
+        Created by <span style="color: red;">Ruturaj</span>
+    </p>
+</div>
