@@ -51,15 +51,32 @@
             color: red;
         }
 
-        /* HERO SECTION */
+        /* HERO SECTION (NETFLIX STYLE BG) */
         .hero {
-            height: 90vh;
-            background: url("https://wallpaperaccess.com/full/36611.jpg") no-repeat center center/cover;
+            height: 100vh;
+            background: url("https://wallpaperaccess.com/full/2112550.jpg") no-repeat center center/cover;
             display: flex;
             flex-direction: column;
             justify-content: center;
             padding-left: 50px;
             margin-top: 80px;
+            position: relative;
+        }
+
+        /* Dark overlay */
+        .hero::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.6);
+        }
+
+        .hero h1, .hero p, .hero button {
+            position: relative;
+            z-index: 2;
         }
 
         .hero h1 {
@@ -89,39 +106,6 @@
             background-color: #b30000;
         }
 
-        /* MOVIE SLIDERS */
-        .section-title {
-            margin: 30px 20px;
-            font-size: 28px;
-            font-weight: bold;
-        }
-
-        .movies {
-            display: flex;
-            overflow-x: scroll;
-            gap: 20px;
-            padding: 0 20px;
-            scroll-behavior: smooth;
-        }
-
-        .movies::-webkit-scrollbar {
-            display: none;
-        }
-
-        .movie {
-            min-width: 220px;
-            height: 330px;
-            border-radius: 10px;
-            background-size: cover;
-            background-position: center;
-            cursor: pointer;
-            transition: transform 0.3s;
-        }
-
-        .movie:hover {
-            transform: scale(1.09);
-        }
-
         /* CREDIT */
         .credit {
             position: fixed;
@@ -148,48 +132,11 @@
         </div>
     </div>
 
-    <!-- HERO -->
+    <!-- NETFLIX STYLE HERO BACKGROUND -->
     <div class="hero">
         <h1>Unlimited Movies, Games, Anime & Entertainment</h1>
-        <p>Watch everywhere. Explore everything. Only on RUTFLIX.</p>
+        <p>Watch anywhere. Anytime. Only on RUTFLIX.</p>
         <button>Explore Now</button>
-    </div>
-
-    <!-- MOVIES SECTION (MARVEL) -->
-    <h2 class="section-title">Marvel Movies</h2>
-    <div class="movies">
-        <div class="movie" style="background-image: url('https://i.imgur.com/j0HhVxW.jpeg');"></div>
-        <div class="movie" style="background-image: url('https://i.imgur.com/Hj7zquY.jpeg');"></div>
-        <div class="movie" style="background-image: url('https://i.imgur.com/VKp7NSS.jpeg');"></div>
-        <div class="movie" style="background-image: url('https://i.imgur.com/EXEaGxX.jpeg');"></div>
-        <div class="movie" style="background-image: url('https://i.imgur.com/UPsRk3S.jpeg');"></div>
-    </div>
-
-    <!-- GAMES SECTION -->
-    <h2 class="section-title">Games (GTA 6 & More)</h2>
-    <div class="movies">
-        <div class="movie" style="background-image: url('https://i.imgur.com/hXOp9Ht.jpeg');"></div>
-        <div class="movie" style="background-image: url('https://i.imgur.com/zvWfaV8.jpeg');"></div>
-        <div class="movie" style="background-image: url('https://i.imgur.com/sHd3CRi.jpeg');"></div>
-        <div class="movie" style="background-image: url('https://i.imgur.com/bxUA0Ur.jpeg');"></div>
-    </div>
-
-    <!-- WEB SERIES SECTION -->
-    <h2 class="section-title">Web Series (Vikings, etc.)</h2>
-    <div class="movies">
-        <div class="movie" style="background-image: url('https://i.imgur.com/Z8KRBm8.jpeg');"></div>
-        <div class="movie" style="background-image: url('https://i.imgur.com/pZQXUVz.jpeg');"></div>
-        <div class="movie" style="background-image: url('https://i.imgur.com/1KvtunR.jpeg');"></div>
-        <div class="movie" style="background-image: url('https://i.imgur.com/wQr8FRH.jpeg');"></div>
-    </div>
-
-    <!-- ANIME SECTION -->
-    <h2 class="section-title">Anime (Dragon Ball, Naruto & More)</h2>
-    <div class="movies">
-        <div class="movie" style="background-image: url('https://i.imgur.com/1FeE0mE.jpeg');"></div>
-        <div class="movie" style="background-image: url('https://i.imgur.com/bC2ljtQ.jpeg');"></div>
-        <div class="movie" style="background-image: url('https://i.imgur.com/0mCu8Fk.jpeg');"></div>
-        <div class="movie" style="background-image: url('https://i.imgur.com/FDWz7sO.jpeg');"></div>
     </div>
 
     <!-- CREDIT TEXT -->
@@ -201,3 +148,4 @@
 
 </body>
 </html>
+
