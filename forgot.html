@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Forgot Password – RUTFLIX</title>
+
+    <style>
+        body{
+            background: url("./images/rutflix-bg.jpg.jpeg") no-repeat center center/cover;
+            height: 100vh;
+            font-family: Arial, sans-serif;
+            position: relative;
+        }
+
+        body::before{
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.80);
+        }
+
+        .container{
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            z-index: 2;
+        }
+
+        .box{
+            width: 380px;
+            background: rgba(0,0,0,0.85);
+            padding: 35px;
+            color: white;
+            border-radius: 8px;
+        }
+
+        .box h2{
+            font-size: 28px;
+            margin-bottom: 15px;
+        }
+
+        .box p{
+            margin-bottom: 20px;
+            color: #ccc;
+        }
+
+        .box input{
+            width: 100%;
+            padding: 13px;
+            border: none;
+            background: #333;
+            color: white;
+            border-radius: 5px;
+            margin-bottom: 20px;
+        }
+
+        .submit-btn{
+            width: 100%;
+            padding: 13px;
+            background: red;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 17px;
+            cursor: pointer;
+        }
+
+        a{
+            color: #bbb;
+            text-decoration: none;
+            display: inline-block;
+            margin-top: 15px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <div class="box">
+            <h2>Forgot Password</h2>
+            <p>Enter your email to reset your password.</p>
+
+            <input type="email" placeholder="Enter your email">
+
+            <button class="submit-btn">Send Reset Link</button>
+
+            <a href="signin.html">← Back to Sign In</a>
+        </div>
+    </div>
+
+</body>
+</html>
