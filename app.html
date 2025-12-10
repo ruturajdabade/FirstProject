@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RUTFLIX App Page</title>
+
+    <style>
+        body{
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background: url("images/rutflix-bg.jpg.jpeg") no-repeat center center/cover;
+            height: 100vh;
+            position: relative;
+            color: white;
+        }
+
+        body::before{
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: rgba(0,0,0,0.7);
+        }
+
+        .content{
+            position: relative;
+            z-index: 5;
+            text-align: center;
+            padding: 40px 20px;
+        }
+
+        .content h1{
+            font-size: 34px;
+            margin-bottom: 15px;
+        }
+
+        .content p{
+            font-size: 18px;
+            margin-bottom: 30px;
+            color: #ddd;
+        }
+
+        .btn-red{
+            background: red;
+            padding: 15px 25px;
+            border: none;
+            border-radius: 8px;
+            font-size: 20px;
+            color: white;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+            margin-bottom: 25px;
+        }
+
+        .manage{
+            font-size: 20px;
+            text-decoration: none;
+            color: white;
+        }
+
+        footer{
+            position: absolute;
+            bottom: 20px;
+            width: 100%;
+            text-align: center;
+            color: #ccc;
+        }
+
+        footer a{
+            color: #ccc;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="content">
+        <h1>RUTFLIX is better than app</h1>
+        <p>You don't need the RUTFLIX subscription to watch on your mobile device.
+           Tap below to explore more to download movies, anime, web series for free.</p>
+
+        <a href="#" class="btn-red">Explore more</a>
+
+        <br>
+
+        <a href="#" class="manage">Manage Account</a>
+    </div>
+
+    <footer>
+        Questions? <a href="#">Contact Us</a>
+    </footer>
+
+</body>
+</html>
