@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RUTFLIX Movies</title>
+
+    <style>
+        body{
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background: #000;
+            color: white;
+        }
+
+        /* NAVBAR */
+        .navbar{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: #111;
+            padding: 15px 25px;
+            position: sticky;
+            top: 0;
+            z-index: 10;
+        }
+
+        .logo{
+            font-size: 28px;
+            font-weight: bold;
+            color: red;
+        }
+
+        .movies-container{
+            padding: 20px;
+        }
+
+        .section-title{
+            font-size: 26px;
+            margin-bottom: 15px;
+        }
+
+        .movie-row{
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 15px;
+        }
+
+        .movie{
+            height: 220px;
+            background-size: cover;
+            background-position: center;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .movie:hover{
+            transform: scale(1.07);
+        }
+        
+
+    </style>
+</head>
+<body>
+
+    <!-- NAVBAR -->
+    <div class="navbar">
+        <div class="logo">RUTFLIX</div>
+    </div>
+
+    
+        <!-- MOVIES SECTION -->
+    <section class="movies-container">
+        <h2>Popular Movies</h2>
+
+        <div class="movie-row">
+            <div class="trend-card"><span class="trend-number">1</span><img src="./images/pirates.jpg"></div>
+            <div class="trend-card"><span class="trend-number">2</span><img src="./images/hogwards.jpg"></div>
+            <div class="trend-card"><span class="trend-number">3</span><img src="./images/marvel aven.jpg"></div>
+           
+            </div>
+    </section>
+
+</body>
+</html>
